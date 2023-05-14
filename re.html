@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Our reviews
+        </title>
+    </head>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+        h1{
+            text-align: center;
+            font-size: 60px;
+        }
+        .cont{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            background-color: #f1f1f1;
+            width: 700px;
+            height: 650px;
+            margin: auto;
+            margin-top: 100px;
+            border-radius: 10px;
+        }
+        img{
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            margin: auto;
+        }
+        .na{
+            font-size: 30px;
+            font-family: "Lucida Console";
+        }
+        .jop{
+            font-size: 20px;
+        }
+        .p{
+            font-size: 30px;
+            text-align: center;
+            font-family: "Consolas";
+            padding: 20px 10px;
+        }
+        .ne,.ba{
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 20px;
+        }
+        .ne{
+            margin-right: -200px;
+        }
+        .ba{
+            margin-right: -7px;
+        }
+    </style>
+    <h1>
+        Your Reviews
+    </h1>
+    <div class="cont">
+    <div><img id="i" src=""></div>
+    <div class="na"><p id="name"></p></div>
+    <div class="jop"><p id="jo"></p></div>
+    <div class="p"><p id="p"></p></div>
+    <button class="ne" onclick="next()">></button>
+    <button class="ba" onclick="back()"><</button>
+    </div>
+    <script>
+        const imgs=["ahmed.JPG","nora.jpg","ashly.JPG","woo.jpg"]
+        const names=["Ahmed Ali" , "Nora Mohammed" ,"Ashly Ethan" , "woo" ]
+        const jops=["web devoloper", "free lancer", "teatcher", "chef"]
+        const parg=["'For its comfortable design and easy navigation , I like this website so much'", "it is easy to find favorite colors,The website has a wide range of colors and allows users to upload images and use them to find matching colors",
+        "It is difficult to find some of the more unusual colors that some users may need","The website is regularly updated with new colors and user experience updates"]
+
+        var im=0;
+
+        document.getElementById("i").setAttribute("src",imgs[im]);
+        document.getElementById("name").innerHTML=(names[im]);
+        document.getElementById("jo").innerHTML=(jops[im]);
+        document.getElementById("p").innerHTML=(parg[im]);
+        
+        function next(){
+            im+=1;
+            if(im>3){
+                im=0
+            }
+            document.getElementById("i").setAttribute("src",imgs[im]);
+            document.getElementById("name").innerHTML=(names[im]);
+            document.getElementById("jo").innerHTML=(jops[im]);
+            document.getElementById("p").innerHTML=(parg[im]);
+        };
+        function back(){
+            im-=1;
+            if(im<0){
+                im=3
+            }
+            document.getElementById("i").setAttribute("src",imgs[im]);
+            document.getElementById("name").innerHTML=(names[im]);
+            document.getElementById("jo").innerHTML=(jops[im]);
+            document.getElementById("p").innerHTML=(parg[im]);
+        };
+    </script>
+</html>
